@@ -1,0 +1,190 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // <link rel="stylesheet" type="text/css" href="cssfile.css">
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
+    title
+      | PocketCollege-Timeline
+    style.
+      *,
+      *::before,
+      *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      }
+      body {
+      font: normal 16px/1.5;
+      font-family: sans-serif;
+      background: white;
+      color: black;
+      overflow-x: hidden;
+      padding-bottom: 50px;
+      }  /* INTRO SECTION
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+      h1 {
+      font-size: 2.5rem;
+      }
+      /* TIMELINE
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+      .timeline ul {
+      background: black;
+      padding: 50px 0;
+      }
+      .timeline ul li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 50px;
+      background: #fff;
+      }
+      .timeline ul li::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: inherit;
+      }
+      .timeline ul li div {
+      position: relative;
+      bottom: 0;
+      width: 400px;
+      padding: 15px;
+      background: white;
+      }
+      .timeline ul li div::before {
+      content: '';
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      }
+      .timeline ul li:nth-child(odd) div {
+      left: 45px;
+      }
+      .timeline ul li:nth-child(odd) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #F45B69 transparent transparent;
+      }
+      .timeline ul li:nth-child(even) div {
+      left: -439px;
+      }
+      .timeline ul li:nth-child(even) div::before {
+      right: -15px;
+      border-width: 8px 0 8px 16px;
+      border-color: transparent transparent transparent #F45B69;
+      }
+      time {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      }
+      /* EFFECTS
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+      .timeline ul li::after {
+      transition: background .5s ease-in-out;
+      }
+      .timeline ul li.in-view::after {
+      background: #F45B69;
+      }
+      .timeline ul li div {
+      visibility: hidden;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+      }
+      .timeline ul li:nth-child(odd) div {
+      transform: translate3d(200px, 0, 0);
+      }
+      .timeline ul li:nth-child(even) div {
+      transform: translate3d(-200px, 0, 0);
+      }
+      .timeline ul li.in-view div {
+      transform: none;
+      visibility: visible;
+      opacity: 1;
+      }
+      /* GENERAL MEDIA QUERIES
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+      @media screen and (max-width: 900px) {
+      .timeline ul li div {
+      width: 250px;
+      }
+      .timeline ul li:nth-child(even) div {
+      left: -289px;
+      /*250+45-6*/
+      }
+      }
+      @media screen and (max-width: 600px) {
+      .timeline ul li {
+      margin-left: 20px;
+      }
+      .timeline ul li div {
+      width: calc(100vw - 91px);
+      }
+      .timeline ul li:nth-child(even) div {
+      left: 45px;
+      }
+      .timeline ul li:nth-child(even) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #F45B69 transparent transparent;
+      }
+      }
+  body(translate='no')
+    
+    .w3-top(style='background-color:#cccccc')
+      .w3-xlarge(style='max-width:1200px;margin:auto')
+        .w3-button.w3-padding-32.w3-left(onclick='w3_open()') ☰
+        .w3-right.w3-padding-32(style='font-family: Karma;') Timeline
+        .w3-center.w3-padding-16
+          a(href='/contentpage')
+            img(src='/images/College_info_homepage/logoblack.png', alt='Logo', style='width:150px; height:60px')
+        // <div class=" w3-right w3-padding-16">College Information</div>
+    script.
+      // Script to open and close sidebar
+      function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      }
+      function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      }
+    // Sidebar (hidden by default)
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:20%;min-width:300px')
+      a.w3-bar-item.w3-button(href='javascript:void(0)', style='text-decoration:none; font-size:40px', onclick='w3_close()') &times
+      a.w3-bar-item.w3-button(href='/edittimeline', style='font-family: Karma; text-decoration:none;', onclick='w3_close()') EditTimeline
+      a.w3-bar-item.w3-button(href='/collegeinfo', style='font-family: Karma; text-decoration:none;', onclick='w3_close()') College Infomation
+      a.w3-bar-item.w3-button(href='/bbs', style='font-family: Karma; text-decoration:none;', onclick='w3_close()') BBS
+    section.timeline(style = "background-color: black")
+      ul
+        each timeline, i in mytimeline
+          li.in-view
+            div
+              time(style='font-size: 20px') #{timeline.event} -- #{timeline.timestr}
+              p(style='font-size: 17px') #{timeline.detail}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

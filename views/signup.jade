@@ -1,0 +1,132 @@
+doctype html
+html
+  title PocketCollege-SignUp
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  script(src='/javascripts/colorfulBall.js')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
+  link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+  link(rel='stylesheet', type='text/css', href='cssfile.css')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  style.
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+  body
+    canvas#tutorial(width='1400', height='1600', style='position:absolute; z-index: 0')
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:3;width:20%;min-width:300px')
+      a.w3-bar-item.w3-button(href='javascript:void(0)', onclick='w3_close()', style='text-decoration: none; font-size:40px') &times
+      a.w3-bar-item.w3-button(href='/contentpage', onclick='w3_close()', style='text-decoration-style: none') PocketCollege
+      a.w3-bar-item.w3-button(href='/timeline', onclick='w3_close()', style='text-decoration-style: none') Timeline
+      a.w3-bar-item.w3-button(href='/bbs', onclick='w3_close()', style='text-decoration-style: none') BBS
+    // Top menu
+    .w3-top(style='background-color:#cccccc')
+      .w3-xlarge(style='max-width:1200px;margin:auto')
+        .w3-button.w3-padding-32.w3-left(onclick='w3_open()') ☰
+        .w3-right.w3-padding-32 Sign Up
+        .w3-center.w3-padding-16
+          a(href='/contentpage')
+            img(src='/images/College_info_homepage/logoblack.png', alt='Logo', style='width:150px; height:60px')
+        // <div class=" w3-right w3-padding-16">College Information</div>
+    br
+    br
+    br
+    br
+    div(style='background-color: darkgrey; width:100%; height: 1000px;')
+      br
+      br
+      br
+      br
+      p(style='font-size:36px ;', align='center') Sign Up
+      div(style='width: 80%; margin-left: 10%;margin-right:10%;background-color: lightgrey; position:absolute; z-index:2')
+        br
+        br
+        form#form_user_register(name="register",style='margin-left: 40%;', method="post", action="/signup_process")
+          p.signupinput
+            | Email address:
+            br 
+            input#input_email(type='email', placeholder="Email", name='email')
+            br
+          p.signupinput
+            | Confirm your email:
+            br 
+            input#input_email(type='email', placeholder="Email", name='email2')
+            br
+          p.signupinput
+            | Username:
+            br
+            input#input_username(type='text', placeholder="Username", name='username')
+            br
+          p.signupinput
+            | Password:
+            br
+            input#input_password(type='password', placeholder="Password", name='password')
+            br
+          p.signupinput
+            | Confirm your password:
+            br
+            input#input_password(type='password', placeholder="Password", name='password2')
+            br
+          p.signupinput
+            | First Name : 
+            br
+            input#input_firstname(type='text', placeholder="First Name", name='fn')
+            br
+          p.signupinput
+            | Last Name: 
+            br
+            input#input_lastname(type='text', placeholder="Last Name", name='ln')
+            br
+          p.signupinput
+            | Current Grade
+            br
+            select#select_grade(type='text',name='grade')
+              option(value='<9')  <9 
+              option(value='9', selected)  9 
+              option(value='10')  10 
+              option(value='11')  11 
+              option(value='12')  12 
+              option(value='>12')  >12 
+            br
+          p.signupinput        
+            | Gender:
+            br
+            select#select_gender(type='text', name='gender')
+              option(value='M')  Male
+              option(value='F')  Female 
+              option(value='others')  others
+            br 
+          p.signupinput
+            | Country:
+            br
+            input#input_country(type='text', placeholder="Country", name='country')
+            br
+          p.signupinput
+            | State:
+            br
+            input#input_state(type='text', placeholder="State", name='state')
+            br
+          p.signupinput        
+            | Make my Profile & Timeline PUBLIC:
+            br
+            select#select_gender(type='text', name='public')
+              option(value='Y')  YES
+              option(value='N')  NO 
+          br
+          br
+          p.signupinput(style='margin-right: 60%; margin-left: 0%; ')
+            button.btn.btn-primary.btn-lg.btn-block(type='submit') Submit
+      br
+      br
+      br
+      // End page content
+    script.
+      // Script to open and close sidebar
+      function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      }
+      function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      }
+      

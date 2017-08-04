@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', type='text/css', href='cssfile.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    style.
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+  title
+    | PocketCollege-AdminPage
+  body
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:20%;min-width:300px;position: absolute; z-index: 6')
+      a.w3-bar-item.w3-button(href='javascript:void(0)', style='text-decoration: none; font-size: 40px;', onclick='w3_close()') &times
+      a.w3-bar-item.w3-button(href='/adminpage', style='text-decoration: none;', onclick='w3_close()') Admin Homepage
+      a.w3-bar-item.w3-button(href='/userlist', style='text-decoration: none;', onclick='w3_close()') Users' Accounts
+      a.w3-bar-item.w3-button(href='/managecollege', style='text-decoration: none;', onclick='w3_close()') Add/Delete Colleges
+    .w3-top(style='background-color:#cccccc')
+      .w3-xlarge(style='max-width:1200px;margin:auto')
+        .w3-button.w3-padding-32.w3-left(onclick='w3_open()') ☰
+        .w3-right.w3-padding-32 Admin Homepage
+        .w3-center.w3-padding-16
+          a(href='/adminpage')
+            img(src='/images/College_info_homepage/logoblack.png', alt='Logo', style='width:150px; height:60px')
+        // <div class=" w3-right w3-padding-16">College Information</div>
+    br
+    br
+    br
+    br
+    div(style='height:100px; background-color:grey;')
+      p.w3-padding-32.w3-center(style='font-size: 30px') Attention! You are now accessing the PocketCollege website as Admin
+      div
+        button.btn.btn-lg.btn-block(type='button', style='background-color: gold;height: 150px') 
+          a(href='/userlist' style='text-decoration:none; font-size:40px;') Users' Accounts
+        button.btn.btn-lg.btn-block(type='button', style='background-color: gold; height:150px') 
+          a(href='/managecollege' style='text-decoration:none; font-size:40px;') View/Add/Delete Colleges
+        button.btn.btn-lg.btn-block(type='button', style='background-color: gold; height:150px')
+          a(href='/deletecookie' style='text-decoration:none; font-size:40px;') Log out
+      script.
+        // Script to open and close sidebar
+        function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        }

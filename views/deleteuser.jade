@@ -1,0 +1,17 @@
+html
+  head
+    title PocketCollege-DeleteUser
+    link(href='/stylesheets/cssfile.css', rel='stylesheet', type='text/css')
+  body
+    br
+    br
+    br
+    h1(align='center') Delete User
+    br
+    form#form_delete_user(name="deleteuser", method="post", action="/deleteuser_process", align='center')
+      p.signupinput
+        | User Email:     
+        input#delete_name(type='text',name='email')
+      br
+      p.signupinput
+        button.submit_btn#submit_user(type="submit") Delete

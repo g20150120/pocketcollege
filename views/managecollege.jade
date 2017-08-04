@@ -1,0 +1,119 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    style.
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    style.
+      .dropdown-menu-li-a_my:focus, .dropdown-menu-li-a_my:hover {
+      color: #262626;
+      text-decoration: none;
+      background-color: #f5f5f5;
+      }
+      .dropdown-menu-li-a_my {
+      display: block;
+      padding-top: 3px;
+      padding-right: 20px;
+      padding-bottom: 3px;
+      padding-left: 20px;
+      clear: both;
+      font-weight: 400;
+      line-height: 1.42857143;
+      color: #333;
+      white-space: nowrap;
+      }
+  title
+    | AdminManagment-Colleges
+  body
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:20%;min-width:300px;position: absolute; z-index: 6')
+      a.w3-bar-item.w3-button(href='javascript:void(0)', style='text-decoration: none; font-size:40px;', onclick='w3_close()') &times
+      a.w3-bar-item.w3-button(href='/adminpage', style='text-decoration: none;', onclick='w3_close()') Admin Homepage
+      a.w3-bar-item.w3-button(href='/userlist', style='text-decoration: none;', onclick='w3_close()') Users' Accounts
+      a.w3-bar-item.w3-button(href='/managecollege', style='text-decoration: none;', onclick='w3_close()') Add/Delete Colleges
+    .w3-top(style='background-color:#cccccc')
+      .w3-xlarge(style='max-width:1200px;margin:auto')
+        .w3-button.w3-padding-32.w3-left(onclick='w3_open()') ☰
+        .w3-right.w3-padding-32 Admin Managment
+        .w3-center.w3-padding-16
+          a(href='/adminpage')
+            img(src='/images/College_info_homepage/logoblack.png', alt='Logo', style='width:150px; height:60px')
+        // <div class=" w3-right w3-padding-16">College Information</div>
+    br
+    br
+    br
+    br
+    div(style='height:100px; background-color:grey;')
+      p.w3-padding-32.w3-center(style='font-size: 30px') Attention! You are now accessing the PocketCollege website as Admin
+    div(style='background-color:lightgrey')
+      br
+      .container(style='background-color:darkgrey')
+        h2 Current Colleges
+        ul.list-group
+          each college, i in colleges
+            li.listSty
+              .dropdown
+                button.list-group-item.dropdown-toggle(type='button', data-toggle='dropdown') #{college.name}
+                ul.dropdown-menu
+                  li
+                    a(href='#') Title: #{college.title}
+                  li
+                    a(href='#') Description: #{college.description}
+                  li 
+                    a(href='#{college.img_src}') Image URL 
+                  li 
+                    a(href='#{college.link}') Detail Information
+                  li
+                    a(href='#') ViewCount: #{college.viewcount}          
+      
+
+      .container(style='background-color:darkgrey')
+        h2 Add Colleges
+        form(name="add", method="post", action="/addcollege_process")
+          .input-group
+            span.input-group-addon College Name
+            input#CollegeName.form-control(type='text', name='add_name', placeholder='Please add college name only here')
+          .input-group
+            span.input-group-addon College Title
+            input#CollegeTitle.form-control(type='text', name='add_title', placeholder="Please add College title here with the format of 'College name | State'")
+          .input-group
+            span.input-group-addon College Description
+            input#CollegeDes.form-control(type='text', name='add_des', placeholder='Please add college brief information here within 50 words ')
+          .input-group
+            span.input-group-addon Image URL
+            input#ImgURL.form-control(type='text', name='add_img', placeholder="Please add cover image's URL here. To get URL for the local image, please go to imgure.com ")
+          .input-group
+            span.input-group-addon Detail link
+            input#detailLink.form-control(type='text', name='add_link', placeholder='Please add detailLink here')
+          br
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Add
+        br
+      
+
+      .container(style='background-color:darkgrey')
+        h2  Delete College
+        form(name="delete", method="post", action="/deletecollege_process")
+          .input-group
+            span.input-group-addon College Name
+            input#delCollegeName.form-control(type='text', name='del_name', placeholder="By adding collge title here, you will delete the correspondent college")
+          br
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Delete
+          br
+          br
+        br
+      br
+      br
+    script.
+      // Script to open and close sidebar
+      function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      }
+      function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      }

@@ -1,0 +1,113 @@
+.login1{
+	position: relative;
+   	text-align: center;
+    /*width: 20px;*/
+    padding: 10px;
+    font:Sans-serif;
+}
+.login2{
+	/*position: relative;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+.login3{
+	/*align:middle;*/
+	width: 40%;
+	height: 40%;
+
+	/*padding-right: 30px;*/
+}
+.login4{
+	padding-left : 10;
+	border: 1;
+}
+.signup1{
+	text-align:center;
+	/*background-color:; */
+	font-size: 50px;
+}
+.signupinput{
+	margin-left = 15%;
+	font = "Monospace";
+}
+.listSty{
+	list-style-type: none
+	/*display：inline*/
+}
+.collegeN{
+	height : 70px;
+}
+#Shade:hover{
+	box-shadow:10px 10px 5px #888888;
+	background-color: lightgrey;
+}
+
+<style type="text/css">
+.CollegeButton {
+	width:100%;
+	background-color: grey;
+	border-radius: 12px;
+
+}
+.autoWarp{
+	word-wrap: break-word;
+	
+}
+.setWidthLi{
+	display:inline-block;
+}
+
+input[type=newText], select {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/*.dropbtn {
+    background-color: lightgrey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width : 500px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}*/
+
+/*.CollegeButton:hover {
+	background-color: blue;
+    color: white;
+
+}*/
+/* This button was generated using CSSButtonGenerator.com */
