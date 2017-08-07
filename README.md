@@ -1,5 +1,10 @@
 # pocketcollege
+
 SPCS 2017 Web Tech Project
+
+server: node & express (js & jade)
+database: mongo
+
 Frontend Contributor: Siyuan(Kevin) Peng
 Backend Contributor: Junchen(Alex) Zhao
 
