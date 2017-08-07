@@ -3,12 +3,12 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
-    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    script(type='text/javascript', src='/javascripts/jquerymin.js')
+    script(type='text/javascript', src='/javascripts/bootstrapmin.js')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrapmin.css')
     style.
       body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     style.
@@ -70,7 +70,17 @@ html
                   li 
                     a(href='#{college.link}') Detail Information
                   li
-                    a(href='#') ViewCount: #{college.viewcount}          
+                    a(href='#') ViewCount: #{college.viewcount}
+                  li
+                    - var hyperlink='/editcollege_process?college=' + college.name;
+                    a(href = hyperlink, style='text-decoration:underline') Modify/Delete College   
+
+
+      .container(style='background-color:darkgrey')
+        form(name="delete", method="post", action="/resetviewcount_process")
+          br
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Reset Viewcount
+          br       
       
 
       .container(style='background-color:darkgrey')
@@ -96,16 +106,7 @@ html
         br
       
 
-      .container(style='background-color:darkgrey')
-        h2  Delete College
-        form(name="delete", method="post", action="/deletecollege_process")
-          .input-group
-            span.input-group-addon College Name
-            input#delCollegeName.form-control(type='text', name='del_name', placeholder="By adding collge title here, you will delete the correspondent college")
-          br
-          button.btn.btn-primary.btn-lg.btn-block(type='submit') Delete
-          br
-          br
+      
         br
       br
       br
