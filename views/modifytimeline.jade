@@ -1,0 +1,95 @@
+doctype html
+html
+  title PocketCollege-ModifyEvent
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrapmin.css')
+  style.
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+  body
+    // Sidebar (hidden by default)
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:20%;min-width:300px')
+      a.w3-bar-item.w3-button(href='javascript:void(0)', style='text-decoration:none; font-size:40px;', onclick='w3_close()') &times
+      a.w3-bar-item.w3-button(href='/contentpage', style='text-decoration:none', onclick='w3_close()') PocketCollege
+      a.w3-bar-item.w3-button(href='/timeline', style='text-decoration:none', onclick='w3_close()') Timeline
+      a.w3-bar-item.w3-button(href='/bbs', style='text-decoration:none', onclick='w3_close()') BBS
+    // Top menu
+    .w3-top(style='background-color:#cccccc')
+      .w3-xlarge(style='max-width:1200px;margin:auto')
+        .w3-button.w3-padding-32.w3-left(onclick='w3_open()') ☰
+        .w3-right.w3-padding-32 Modify My Event
+        .w3-center.w3-padding-16
+          a(href='/contentpage')
+            img(src='/images/College_info_homepage/logoblack.png', alt='Logo', style='width:150px; height:60px')
+        // <div class=" w3-right w3-padding-16">College Information</div>
+    br
+    br
+    br
+    br
+    div(style='background-color: darkgrey')
+      br
+      br
+      br
+      br
+      p(style='font-size:36px ;padding-left:10%') Modify My Event
+      div(style='margin-left: 10%;margin-right:10%;background-color: lightgrey')
+        br
+        br
+        form(name='user_edit_info',align="center", method="post", action='/modifytimeline_process?originalevent='+myevent.event)
+          p(style='font-size: 20px;')
+            | Event: 
+            br
+            input(type='text', name='event', value="#{myevent.event}", style='width: 618px; text-align: center')
+            br
+          p(style='font-size: 20px;')
+            | Year: 
+            br
+            input(type='text', name='year', value="#{myevent.time.toString().substring(0,4)}",style='width: 60px;')
+            br
+          p(style='font-size: 20px;')
+            | Month:
+            br
+            select(type='text', name='month')
+
+              - var convert=["","Jan.","Feb.","Mar.","April","May","June","July","Aug.","Sep.","Oct.","Nov.","Dec."];
+              - var month=parseInt(myevent.time.toString().substring(4,6));
+              - for(var i=1;i<=12;i++){
+                  - if(month===i){
+                      option(value=convert[i], selected) #{convert[i]}
+                  - }
+                  - else{
+                      option(value=convert[i]) #{convert[i]}
+                  - }
+              - }
+            br
+
+          p(style='font-size: 20px;')
+            | Detail:
+            br
+            input(type='text', name='detail', value="#{myevent.detail}", style='width: 1000px;')
+            br
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Submit
+      
+        br
+        br
+        form(name='user_edit_info',align="center", method="post", action='/deleteevent_process')
+          p(style='font-size: 20px;')
+            | Event: 
+            br
+            input(type='text', name='delete_event', value="#{myevent.event}", style='width: 618px; text-align: center')
+            br         
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Delete
+
+      // End page content
+    script.
+      // Script to open and close sidebar
+      function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      }
+      function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      }
