@@ -3,11 +3,9 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    // <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
-    // <link rel="stylesheet" type="text/css" href="cssfile.css">
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
+    script(type='text/javascript', src='/javascripts/jquerymin.js')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
     title
       | PocketCollege-Timeline
     style.
@@ -18,14 +16,25 @@ html
       padding: 0;
       box-sizing: border-box;
       }
-      body {
-      font: normal 16px/1.5;
-      font-family: sans-serif;
-      background: white;
-      color: black;
-      overflow-x: hidden;
-      padding-bottom: 50px;
-      }  /* INTRO SECTION
+      .mybody {
+        font: normal 16px/1.5;
+        font-family: sans-serif;
+        background: white;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: white;
+        color: black;
+        overflow-x: hidden;
+        padding-bottom: 50px;
+      }  
+      /* INTRO SECTION
       –––––––––––––––––––––––––––––––––––––––––––––––––– */
       h1 {
       font-size: 2.5rem;
@@ -143,7 +152,7 @@ html
       border-color: transparent #F45B69 transparent transparent;
       }
       }
-  body(translate='no')
+  body.mybody(translate='no', style='background-color:black')
     
     .w3-top(style='background-color:#cccccc')
       .w3-xlarge(style='max-width:1200px;margin:auto')
