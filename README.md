@@ -1,15 +1,18 @@
-# pocketcollege
+# PocketCollege
 
 SPCS 2017 Web Tech Project
 
 server: node & express (js & jade)
+
 database: mongo
 
 Frontend Contributor: Siyuan(Kevin) Peng
+
 Backend Contributor: Junchen(Alex) Zhao
 
 
 Initialization Instruction:
+
 step1:
 mongod -dbpath /users/apple/NodeJSMongoDB/pocketcollege/data
 
@@ -25,7 +28,9 @@ lt --port 3000
 
 step5(optional, get a temporary but stable url accessible through LAN):
 ifconfig
+
 suppose en0:inet 172.31.51.15
+
 visit 172.31.51.15:3000
 
 
