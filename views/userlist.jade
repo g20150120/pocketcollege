@@ -3,16 +3,16 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
-    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
-    link(rel='stylesheet', type='text/css', href='cssfile.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrapmin.css')
     style.
       body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   title
     | AdminManagment-Users
   body
-    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:40%;min-width:300px')
+    nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:2;width:20%;min-width:300px')
       a.w3-bar-item.w3-button(href='javascript:void(0)', onclick='w3_close()', style='text-decoration:none; font-size: 40px;') &times
       a.w3-bar-item.w3-button(href='/adminpage', onclick='w3_close()', style='text-decoration:none') Admin Page
       a.w3-bar-item.w3-button(href='/managecollege', onclick='w3_close()', style='text-decoration:none') Add/Delete Colleges
@@ -45,7 +45,9 @@ html
               br 
               | lives in: #{user.state}, #{user.country} .
               br
-              | PUBLIC? #{user.public}.
+              | PUBLIC?
+              br
+              a(href='/adminviewtimeline_process?email='+user.email) #{user.public}. 
     script.
       // Script to open and close sidebar
       function w3_open() {
