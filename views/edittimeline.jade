@@ -4,12 +4,12 @@ html
     title PocketCollege-EditTimeline
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
-    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    script(type='text/javascript', src='/javascripts/jquerymin.js')
+    script(type='text/javascript', src='/javascripts/bootstrapmin.js')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrapmin.css')
     style.
       body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     style.
@@ -65,7 +65,10 @@ html
                     a(href='#') Time: #{timeline.timestr}
                   li
                     a(herf='#') Detail: #{timeline.detail}
-                  
+                  li
+                    - var hyperlink='/editevent_process?event=' + timeline.event;
+                    a(href = hyperlink, style='text-decoration:underline') Modify/Delete Event
+
       br
       br
       .container(style='background-color:darkgrey')
@@ -100,35 +103,6 @@ html
         br
         br
 
-      .container(style='background-color:darkgrey')
-        h2  Delete Event
-        form(name="delete", method="post", action="/deleteevent_process")
-          .input-group
-            span.input-group-addon Event
-            input#CollegeName.form-control(type='text', name='delete_event', placeholder='My Birthday')
-          .input-group
-            span.input-group-addon Year
-            input#CollegeTitle.form-control(type='text', name='delete_year', placeholder="2000")
-          .input-group
-            span.input-group-addon Month
-            select(type='text',name='delete_month')
-              option(value='Jan.') Jan.
-                option(value='Feb.') Feb.
-                option(value='Mar.') Mar.
-                option(value='April') April
-                option(value='May', selected) May 
-                option(value='June') June
-                option(value='July') July
-                option(value='Aug.') Aug.
-                option(value='Sep.') Sep.
-                option(value='Oct.') Oct.
-                option(value='Nov.') Nov.
-                option(value='Dec.') Dec.
-          br
-          button.btn.btn-primary.btn-lg.btn-block(type='submit') Delete
-          br
-          br
-        br
       br
       br
     script.
