@@ -3,13 +3,13 @@ html
   title PocketCollege-SignUp
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  script(type='text/javascript', src='/javascripts/jquerymin.js')
+  script(type='text/javascript', src='/javascripts/bootstrapmin.js')
   script(src='/javascripts/colorfulBall.js')
-  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Karma')
-  link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
-  link(rel='stylesheet', type='text/css', href='cssfile.css')
-  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/google-font-karma.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/w3-original.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/cssfile.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrapmin.css')
   style.
     body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     .w3-bar-block .w3-bar-item {padding:20px}
@@ -17,9 +17,9 @@ html
     canvas#tutorial(width='1400', height='1600', style='position:absolute; z-index: 0')
     nav#mySidebar.w3-sidebar.w3-bar-block.w3-card-2.w3-top.w3-xlarge.w3-animate-left(style='display:none;z-index:3;width:20%;min-width:300px')
       a.w3-bar-item.w3-button(href='javascript:void(0)', onclick='w3_close()', style='text-decoration: none; font-size:40px') &times
-      a.w3-bar-item.w3-button(href='/contentpage', onclick='w3_close()', style='text-decoration-style: none') PocketCollege
-      a.w3-bar-item.w3-button(href='/timeline', onclick='w3_close()', style='text-decoration-style: none') Timeline
-      a.w3-bar-item.w3-button(href='/bbs', onclick='w3_close()', style='text-decoration-style: none') BBS
+      a.w3-bar-item.w3-button(href='/contentpage', onclick='w3_close()', style='text-decoration: none') PocketCollege
+      a.w3-bar-item.w3-button(href='/timeline', onclick='w3_close()', style='text-decoration: none') Timeline
+      a.w3-bar-item.w3-button(href='/bbs', onclick='w3_close()', style='text-decoration: none') BBS
     // Top menu
     .w3-top(style='background-color:#cccccc')
       .w3-xlarge(style='max-width:1200px;margin:auto')
@@ -39,7 +39,7 @@ html
       br
       br
       p(style='font-size:36px ;', align='center') Sign Up
-      div(style='width: 80%; margin-left: 10%;margin-right:10%;background-color: lightgrey; position:absolute; z-index:2')
+      div(style='width: 80%; margin-left: 10%;margin-right:10%;background-color: lightgrey; position:absolute; z-index:0')
         br
         br
         form#form_user_register(name="register",style='margin-left: 40%;', method="post", action="/signup_process")
