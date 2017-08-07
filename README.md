@@ -1,6 +1,10 @@
 # pocketcollege
 SPCS 2017 Web Tech Project
+Frontend Contributor: Siyuan(Kevin) Peng
+Backend Contributor: Junchen(Alex) Zhao
 
+
+Initialization Instruction:
 step1:
 mongod -dbpath /users/apple/NodeJSMongoDB/pocketcollege/data
 
