@@ -2,7 +2,7 @@
 
 SPCS 2017 Web Tech Project
 
-server: node & express (js & jade)
+server: node & express & js & jade
 
 database: mongo
 
@@ -24,7 +24,7 @@ cd /Users/apple/NodeJSMongoDB/pocketcollege
 npm start
 
 step4(optional, get a temporary and unstable url accessible through Internet):
-lt --port 3000
+lt --port 3000 --subdomain pocketcollege
 
 step5(optional, get a temporary but stable url accessible through LAN):
 ifconfig
@@ -68,6 +68,7 @@ Website Description:
 
 3. admin
 	3.1 view all the users' accounts
+		3.1.1 view more info about user's profile and timeline if they were set public
 	3.2 manage colleges
 		3.2.1 view all of the colleges
 		3.2.2 add colleges
@@ -108,10 +109,6 @@ Further Development:
 	5.1 direct to a new page with a form that can send email to admin(Josh)
 
 6. detail page of About us & Acknowledgement & Our goal
-
-7. admin can view more info on userslist page; if they are public, admin can be redirected to their profile and timeline page
-
-
 
 
 
