@@ -66,6 +66,13 @@ html
                   - }
               - }
             br
+          //2000 05 18
+          //0123 45 67
+          p(style='font-size: 20px;')
+            | Date: 
+            br
+            input(type='text', name='date', value="#{myevent.time.toString().substring(6)}",style='width: 60px;')
+            br
 
           p(style='font-size: 20px;')
             | Detail:
